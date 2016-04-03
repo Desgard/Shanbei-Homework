@@ -23,9 +23,10 @@
     ICSDrawerController *drawer = [[ICSDrawerController alloc] initWithLeftViewController: leftVC centerViewController: plainVC];
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: drawer];
+    
     [self.window setRootViewController: nav];
     drawer.title = @"扇贝作业";
-    nav.navigationBarHidden = NO;
+    nav.navigationBarHidden = YES;
     return YES;
 }
 

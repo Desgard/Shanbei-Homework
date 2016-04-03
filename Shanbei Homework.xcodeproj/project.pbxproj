@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D566C2FD1CB1090C00C54905 /* star-full.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C2FC1CB1090C00C54905 /* star-full.png */; };
+		D566C2FF1CB1091100C54905 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C2FE1CB1091100C54905 /* menu.png */; };
+		D566C3011CB168B900C54905 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D566C3001CB168B900C54905 /* README.md */; };
 		D58DD2381CB0073C00294A80 /* QFNSlayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58DD2371CB0073C00294A80 /* QFNSlayoutManager.m */; };
 		D58DD23E1CB0276400294A80 /* ICSDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58DD23B1CB0276400294A80 /* ICSDrawerController.m */; };
 		D58DD23F1CB0276400294A80 /* ICSDropShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D58DD23D1CB0276400294A80 /* ICSDropShadowView.m */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D566C2FC1CB1090C00C54905 /* star-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-full.png"; sourceTree = "<group>"; };
+		D566C2FE1CB1091100C54905 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		D566C3001CB168B900C54905 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D58DD2361CB0073C00294A80 /* QFNSlayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFNSlayoutManager.h; sourceTree = "<group>"; };
 		D58DD2371CB0073C00294A80 /* QFNSlayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFNSlayoutManager.m; sourceTree = "<group>"; };
 		D58DD23A1CB0276400294A80 /* ICSDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSDrawerController.h; sourceTree = "<group>"; };
@@ -87,6 +93,7 @@
 				D5F7F16A1CAF56420049E471 /* Frameworks */,
 				D5A95BB41CAE798C009E469E /* Shanbei Homework */,
 				D5A95BB31CAE798B009E469E /* Products */,
+				D566C3001CB168B900C54905 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +125,8 @@
 		D5A95BB51CAE798C009E469E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D566C2FE1CB1091100C54905 /* menu.png */,
+				D566C2FC1CB1090C00C54905 /* star-full.png */,
 				D58DD2391CB0276400294A80 /* ICSDrawerController */,
 				D5A95BB61CAE798C009E469E /* main.m */,
 			);
@@ -203,7 +212,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5A95BC21CAE798C009E469E /* Assets.xcassets in Resources */,
+				D566C2FF1CB1091100C54905 /* menu.png in Resources */,
 				D5A95BC01CAE798C009E469E /* Main.storyboard in Resources */,
+				D566C2FD1CB1090C00C54905 /* star-full.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +231,7 @@
 				D58DD2431CB0280200294A80 /* MenuViewController.m in Sources */,
 				D58DD23F1CB0276400294A80 /* ICSDropShadowView.m in Sources */,
 				D5A95BBA1CAE798C009E469E /* AppDelegate.m in Sources */,
+				D566C3011CB168B900C54905 /* README.md in Sources */,
 				D58DD23E1CB0276400294A80 /* ICSDrawerController.m in Sources */,
 				D5A95BB71CAE798C009E469E /* main.m in Sources */,
 			);
