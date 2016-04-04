@@ -10,6 +10,23 @@
 		D566C2FD1CB1090C00C54905 /* star-full.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C2FC1CB1090C00C54905 /* star-full.png */; };
 		D566C2FF1CB1091100C54905 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C2FE1CB1091100C54905 /* menu.png */; };
 		D566C3011CB168B900C54905 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D566C3001CB168B900C54905 /* README.md */; };
+		D566C3031CB1FEAD00C54905 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D566C3021CB1FEAD00C54905 /* CoreData.framework */; };
+		D566C3181CB22CAD00C54905 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D566C3171CB22CAD00C54905 /* libsqlite3.tbd */; };
+		D566C31B1CB22D5900C54905 /* dbhelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D566C31A1CB22D5900C54905 /* dbhelper.m */; };
+		D566C31E1CB23E7A00C54905 /* dbload.m in Sources */ = {isa = PBXBuildFile; fileRef = D566C31D1CB23E7A00C54905 /* dbload.m */; };
+		D566C3211CB282D900C54905 /* translate.py in Resources */ = {isa = PBXBuildFile; fileRef = D566C31F1CB282D900C54905 /* translate.py */; };
+		D566C3221CB282D900C54905 /* nce4_words.txt in Resources */ = {isa = PBXBuildFile; fileRef = D566C3201CB282D900C54905 /* nce4_words.txt */; };
+		D566C3241CB2830900C54905 /* outputFilesForWords.txt in Resources */ = {isa = PBXBuildFile; fileRef = D566C3231CB2830900C54905 /* outputFilesForWords.txt */; };
+		D566C3331CB2C66800C54905 /* icArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C3271CB2C66800C54905 /* icArrow.png */; };
+		D566C3341CB2C66800C54905 /* icArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C3281CB2C66800C54905 /* icArrow@2x.png */; };
+		D566C3351CB2C66800C54905 /* icArrow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C3291CB2C66800C54905 /* icArrow@3x.png */; };
+		D566C3361CB2C66800C54905 /* icArrowTop.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C32A1CB2C66800C54905 /* icArrowTop.png */; };
+		D566C3371CB2C66800C54905 /* icArrowTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C32B1CB2C66800C54905 /* icArrowTop@2x.png */; };
+		D566C3381CB2C66800C54905 /* icArrowTop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C32C1CB2C66800C54905 /* icArrowTop@3x.png */; };
+		D566C3391CB2C66800C54905 /* icCross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C32D1CB2C66800C54905 /* icCross@2x.png */; };
+		D566C33A1CB2C66800C54905 /* SFDraggableDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = D566C32F1CB2C66800C54905 /* SFDraggableDialogView.m */; };
+		D566C33B1CB2C66800C54905 /* SFDraggableDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D566C3301CB2C66800C54905 /* SFDraggableDialogView.xib */; };
+		D566C33C1CB2C66800C54905 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = D566C3321CB2C66800C54905 /* UIImage+ImageEffects.m */; };
 		D58DD2381CB0073C00294A80 /* QFNSlayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D58DD2371CB0073C00294A80 /* QFNSlayoutManager.m */; };
 		D58DD23E1CB0276400294A80 /* ICSDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D58DD23B1CB0276400294A80 /* ICSDrawerController.m */; };
 		D58DD23F1CB0276400294A80 /* ICSDropShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = D58DD23D1CB0276400294A80 /* ICSDropShadowView.m */; };
@@ -29,6 +46,27 @@
 		D566C2FC1CB1090C00C54905 /* star-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-full.png"; sourceTree = "<group>"; };
 		D566C2FE1CB1091100C54905 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		D566C3001CB168B900C54905 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D566C3021CB1FEAD00C54905 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D566C3171CB22CAD00C54905 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D566C3191CB22D5900C54905 /* dbhelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbhelper.h; sourceTree = "<group>"; };
+		D566C31A1CB22D5900C54905 /* dbhelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbhelper.m; sourceTree = "<group>"; };
+		D566C31C1CB23E7A00C54905 /* dbload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dbload.h; sourceTree = "<group>"; };
+		D566C31D1CB23E7A00C54905 /* dbload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dbload.m; sourceTree = "<group>"; };
+		D566C31F1CB282D900C54905 /* translate.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = translate.py; sourceTree = "<group>"; };
+		D566C3201CB282D900C54905 /* nce4_words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = nce4_words.txt; sourceTree = "<group>"; };
+		D566C3231CB2830900C54905 /* outputFilesForWords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = outputFilesForWords.txt; sourceTree = "<group>"; };
+		D566C3271CB2C66800C54905 /* icArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icArrow.png; sourceTree = "<group>"; };
+		D566C3281CB2C66800C54905 /* icArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icArrow@2x.png"; sourceTree = "<group>"; };
+		D566C3291CB2C66800C54905 /* icArrow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icArrow@3x.png"; sourceTree = "<group>"; };
+		D566C32A1CB2C66800C54905 /* icArrowTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icArrowTop.png; sourceTree = "<group>"; };
+		D566C32B1CB2C66800C54905 /* icArrowTop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icArrowTop@2x.png"; sourceTree = "<group>"; };
+		D566C32C1CB2C66800C54905 /* icArrowTop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icArrowTop@3x.png"; sourceTree = "<group>"; };
+		D566C32D1CB2C66800C54905 /* icCross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icCross@2x.png"; sourceTree = "<group>"; };
+		D566C32E1CB2C66800C54905 /* SFDraggableDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFDraggableDialogView.h; sourceTree = "<group>"; };
+		D566C32F1CB2C66800C54905 /* SFDraggableDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFDraggableDialogView.m; sourceTree = "<group>"; };
+		D566C3301CB2C66800C54905 /* SFDraggableDialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFDraggableDialogView.xib; sourceTree = "<group>"; };
+		D566C3311CB2C66800C54905 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		D566C3321CB2C66800C54905 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		D58DD2361CB0073C00294A80 /* QFNSlayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFNSlayoutManager.h; sourceTree = "<group>"; };
 		D58DD2371CB0073C00294A80 /* QFNSlayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFNSlayoutManager.m; sourceTree = "<group>"; };
 		D58DD23A1CB0276400294A80 /* ICSDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICSDrawerController.h; sourceTree = "<group>"; };
@@ -58,6 +96,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D566C3181CB22CAD00C54905 /* libsqlite3.tbd in Frameworks */,
+				D566C3031CB1FEAD00C54905 /* CoreData.framework in Frameworks */,
 				D5F7F1691CAF56240049E471 /* UIKit.framework in Frameworks */,
 				D5F7F1671CAF561D0049E471 /* CoreGraphics.framework in Frameworks */,
 				D5F7F1651CAF56130049E471 /* Foundation.framework in Frameworks */,
@@ -67,6 +107,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D566C3041CB1FF5500C54905 /* DBHelper */ = {
+			isa = PBXGroup;
+			children = (
+				D566C3191CB22D5900C54905 /* dbhelper.h */,
+				D566C31A1CB22D5900C54905 /* dbhelper.m */,
+				D566C31C1CB23E7A00C54905 /* dbload.h */,
+				D566C31D1CB23E7A00C54905 /* dbload.m */,
+			);
+			name = DBHelper;
+			sourceTree = "<group>";
+		};
+		D566C3251CB2C66800C54905 /* SFDraggableDialogView */ = {
+			isa = PBXGroup;
+			children = (
+				D566C3261CB2C66800C54905 /* Resources */,
+				D566C32E1CB2C66800C54905 /* SFDraggableDialogView.h */,
+				D566C32F1CB2C66800C54905 /* SFDraggableDialogView.m */,
+				D566C3301CB2C66800C54905 /* SFDraggableDialogView.xib */,
+				D566C3311CB2C66800C54905 /* UIImage+ImageEffects.h */,
+				D566C3321CB2C66800C54905 /* UIImage+ImageEffects.m */,
+			);
+			path = SFDraggableDialogView;
+			sourceTree = "<group>";
+		};
+		D566C3261CB2C66800C54905 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D566C3271CB2C66800C54905 /* icArrow.png */,
+				D566C3281CB2C66800C54905 /* icArrow@2x.png */,
+				D566C3291CB2C66800C54905 /* icArrow@3x.png */,
+				D566C32A1CB2C66800C54905 /* icArrowTop.png */,
+				D566C32B1CB2C66800C54905 /* icArrowTop@2x.png */,
+				D566C32C1CB2C66800C54905 /* icArrowTop@3x.png */,
+				D566C32D1CB2C66800C54905 /* icCross@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D58DD2391CB0276400294A80 /* ICSDrawerController */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +172,9 @@
 				D5A95BB41CAE798C009E469E /* Shanbei Homework */,
 				D5A95BB31CAE798B009E469E /* Products */,
 				D566C3001CB168B900C54905 /* README.md */,
+				D566C31F1CB282D900C54905 /* translate.py */,
+				D566C3201CB282D900C54905 /* nce4_words.txt */,
+				D566C3231CB2830900C54905 /* outputFilesForWords.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +189,8 @@
 		D5A95BB41CAE798C009E469E /* Shanbei Homework */ = {
 			isa = PBXGroup;
 			children = (
+				D566C3251CB2C66800C54905 /* SFDraggableDialogView */,
+				D566C3041CB1FF5500C54905 /* DBHelper */,
 				D58DD2401CB027E700294A80 /* MenuView */,
 				D5F7F1601CAED5A20049E471 /* Highlighting */,
 				D5A95BB81CAE798C009E469E /* AppDelegate.h */,
@@ -147,6 +230,8 @@
 		D5F7F16A1CAF56420049E471 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D566C3171CB22CAD00C54905 /* libsqlite3.tbd */,
+				D566C3021CB1FEAD00C54905 /* CoreData.framework */,
 				D5F7F1681CAF56240049E471 /* UIKit.framework */,
 				D5F7F1661CAF561D0049E471 /* CoreGraphics.framework */,
 				D5F7F1641CAF56130049E471 /* Foundation.framework */,
@@ -211,10 +296,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D566C3361CB2C66800C54905 /* icArrowTop.png in Resources */,
 				D5A95BC21CAE798C009E469E /* Assets.xcassets in Resources */,
+				D566C3351CB2C66800C54905 /* icArrow@3x.png in Resources */,
+				D566C3341CB2C66800C54905 /* icArrow@2x.png in Resources */,
 				D566C2FF1CB1091100C54905 /* menu.png in Resources */,
 				D5A95BC01CAE798C009E469E /* Main.storyboard in Resources */,
+				D566C3381CB2C66800C54905 /* icArrowTop@3x.png in Resources */,
 				D566C2FD1CB1090C00C54905 /* star-full.png in Resources */,
+				D566C3221CB282D900C54905 /* nce4_words.txt in Resources */,
+				D566C3371CB2C66800C54905 /* icArrowTop@2x.png in Resources */,
+				D566C3331CB2C66800C54905 /* icArrow.png in Resources */,
+				D566C3211CB282D900C54905 /* translate.py in Resources */,
+				D566C3241CB2830900C54905 /* outputFilesForWords.txt in Resources */,
+				D566C33B1CB2C66800C54905 /* SFDraggableDialogView.xib in Resources */,
+				D566C3391CB2C66800C54905 /* icCross@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,14 +322,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5F7F1631CAED5D90049E471 /* HighlightingTextStorage.m in Sources */,
+				D566C33C1CB2C66800C54905 /* UIImage+ImageEffects.m in Sources */,
 				D5A95BBD1CAE798C009E469E /* ViewController.m in Sources */,
 				D58DD2381CB0073C00294A80 /* QFNSlayoutManager.m in Sources */,
 				D58DD2431CB0280200294A80 /* MenuViewController.m in Sources */,
 				D58DD23F1CB0276400294A80 /* ICSDropShadowView.m in Sources */,
 				D5A95BBA1CAE798C009E469E /* AppDelegate.m in Sources */,
 				D566C3011CB168B900C54905 /* README.md in Sources */,
+				D566C31B1CB22D5900C54905 /* dbhelper.m in Sources */,
 				D58DD23E1CB0276400294A80 /* ICSDrawerController.m in Sources */,
 				D5A95BB71CAE798C009E469E /* main.m in Sources */,
+				D566C31E1CB23E7A00C54905 /* dbload.m in Sources */,
+				D566C33A1CB2C66800C54905 /* SFDraggableDialogView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

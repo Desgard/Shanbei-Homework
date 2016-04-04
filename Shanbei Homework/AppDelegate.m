@@ -10,11 +10,14 @@
 #import "ViewController.h"
 #import "MenuViewController.h"
 
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
+
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -27,6 +30,7 @@
     [self.window setRootViewController: nav];
     drawer.title = @"扇贝作业";
     nav.navigationBarHidden = YES;
+    
     return YES;
 }
 
@@ -49,5 +53,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     
 }
+
+
 
 @end

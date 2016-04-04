@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) NSString *passage;
-@property (nonatomic, strong) NSArray *words;
+@property (nonatomic, strong) NSMutableArray *words;
 
 @end
 

@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "ViewController.h"
 
 
 @interface MenuViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    self.tabelArr = @[@"header", @"跑步", @"排行榜", @"挑战", @"运动生涯", @"设置", @"其他功能"];
+    self.tabelArr = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6"];
     [self.view addSubview: self.tabelView];
 }
 
@@ -39,19 +40,15 @@
 
 - (id) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] init];
+    cell.textLabel.text = self.tabelArr[indexPath.row];
     return cell;
-    
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    typeof(self) __weak weakSelf = self;
     [self.drawer reloadCenterViewControllerUsingBlock: ^{
-        NSInteger _flag = indexPath.row;
-        switch (_flag) {
-            case 0:
-                break;
-            default:
-                break;
-        }
+        NSParameterAssert(weakSelf);
+        [[NSNotificationCenter defaultCenter] postNotificationName: @"HighlightLevelWords" object: [NSString stringWithFormat: @"%ld", (long)indexPath.row]];
     }];
 }
 
@@ -62,7 +59,7 @@
 #pragma mark --------懒加载---------
 - (UITableView *) tabelView {
     if (!_tabelView) {
-        _tabelView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, 262, self.view.frame.size.height) style:UITableViewStylePlain];
+        _tabelView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, 262, self.view.frame.size.height - 20) style:UITableViewStylePlain];
         _tabelView.delegate = self;
         _tabelView.dataSource = self;
     }
