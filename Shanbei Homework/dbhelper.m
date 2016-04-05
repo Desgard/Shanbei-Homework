@@ -63,6 +63,20 @@
     return res;
 }
 
+#pragma mark - sql根据单词查找level
+- (NSString *) queryByWords: (NSString *) word {
+    NSString *sql = [NSString stringWithFormat: @"SELECT * FROM WORD WHERE WORD='%@'", word];
+    sqlite3_stmt *statement;
+    NSString *res = [[NSString alloc] init];
+    if (sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            char *lev = (char *)sqlite3_column_text(statement, 3);
+            res = [[NSString alloc] initWithUTF8String: lev];
+        }
+    }
+    return res;
+}
+
 #pragma mark - sql执行语句方法
 - (int) execSql: (NSString *)sql {
     char *errorMsg;

@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SFDraggableDialogView.h"
 
-@interface ViewController : UIViewController<UITextViewDelegate>
+
+@interface ViewController : UIViewController<UITextViewDelegate, SFDraggableDialogViewDelegate>
 
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) NSString *passage;

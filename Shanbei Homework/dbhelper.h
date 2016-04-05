@@ -17,4 +17,5 @@
 - (void) loadDataTable;
 
 - (NSMutableArray *) queryByLevel: (NSString *)lev;
+- (NSString *) queryByWords: (NSString *) word;
 @end

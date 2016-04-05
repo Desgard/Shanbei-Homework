@@ -11,6 +11,7 @@
 #import "QFNSlayoutManager.h"
 #import "ICSDrawerController.h"
 #import "dbhelper.h"
+#import "SFDraggableDialogView.h"
 
 #import <CoreData/CoreData.h>
 
@@ -153,7 +154,36 @@
 
 #pragma mark - InteractWithURL Delegate
 - (bool) textView: (UITextView *)textView shouldInteractWithURL: (nonnull NSURL *)URL inRange: (NSRange)characterRange {
-    NSLog(@"%@", [self.passage substringWithRange: characterRange]);
+    // NSLog(@"%@", [self.passage substringWithRange: characterRange]);
+    NSString *lev = [self.db queryByWords: [self.passage substringWithRange: characterRange]];
+    // NSLog(@"%@", lev);
+    int levNum = [lev intValue];
+    NSString *title = @"⭐︎";
+    for (int i = 0; i < levNum; ++ i) {
+        if (i == 0) title = @"";
+        title = [title stringByAppendingString: @"★"];
+    }
+    
+    // 弹出层SFDraggab
+    SFDraggableDialogView *dialogView = [[[NSBundle mainBundle] loadNibNamed:@"SFDraggableDialogView" owner:self options:nil] firstObject];
+    dialogView.frame = self.view.bounds;
+    dialogView.photo = [UIImage imageNamed:@"face"];
+    dialogView.delegate = self;
+    dialogView.titleText = [[NSMutableAttributedString alloc] initWithString: title];
+    dialogView.messageText = [[NSMutableAttributedString alloc] initWithString: [self.passage substringWithRange: characterRange]];
+    dialogView.firstBtnText = [@"收入囊中" uppercaseString];
+    dialogView.dialogBackgroundColor = [UIColor whiteColor];
+    dialogView.cornerRadius = 8.0;
+    dialogView.backgroundShadowOpacity = 0.2;
+    dialogView.hideCloseButton = true;
+    dialogView.showSecondBtn = false;
+    dialogView.contentViewType = SFContentViewTypeDefault;
+    dialogView.firstBtnBackgroundColor = [UIColor colorWithRed:0.230 green:0.777 blue:0.316 alpha:1.000];
+    [dialogView createBlurBackgroundWithImage:[self jt_imageWithView:self.view] tintColor:[[UIColor blackColor] colorWithAlphaComponent:0.12] blurRadius:60];
+    
+    [self.view addSubview:dialogView];
+    
+    
     return YES;
 }
 
@@ -186,6 +216,38 @@
 
 - (void) openDrawer {
     [self.drawer open];
+}
+
+#pragma mark - SFDraggableDialogViewDelegate
+- (void)draggableDialogView:(SFDraggableDialogView *)dialogView didPressFirstButton:(UIButton *)firstButton {
+    NSLog(@"The first button pressed");
+}
+
+- (void)draggingDidBegin:(SFDraggableDialogView *)dialogView {
+    NSLog(@"Dragging has begun");
+}
+
+- (void)draggingDidEnd:(SFDraggableDialogView *)dialogView {
+    NSLog(@"Dragging did end");
+}
+
+- (void)draggableDialogViewWillDismiss:(SFDraggableDialogView *)dialogView {
+    NSLog(@"Will be dismissed");
+}
+
+- (void)draggableDialogViewDismissed:(SFDraggableDialogView *)dialogView {
+    NSLog(@"Dismissed");
+}
+
+#pragma mark - Snapshot
+- (UIImage *)jt_imageWithView:(UIView *)view {
+    CGFloat scale = [[UIScreen mainScreen] scale];
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, NO, scale);
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:true];
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 @end
