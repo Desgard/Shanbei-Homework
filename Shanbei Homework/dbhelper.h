@@ -18,4 +18,8 @@
 
 - (NSMutableArray *) queryByLevel: (NSString *)lev;
 - (NSString *) queryByWords: (NSString *) word;
+- (NSMutableArray *) queryByLevelDown: (NSString *)lev;
+- (NSMutableArray *) queryTitle;
+- (NSString *) queryPassageById: (NSString *)Id;
+- (NSMutableArray *) queryByLesson: (NSString *)Id;
 @end

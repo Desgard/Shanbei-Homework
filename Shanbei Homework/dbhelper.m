@@ -63,6 +63,36 @@
     return res;
 }
 
+#pragma mark - sql根据level向下查找
+- (NSMutableArray *) queryByLevelDown: (NSString *)lev {
+    NSString *sql = [NSString stringWithFormat: @"SELECT * FROM WORD WHERE WORDLEVEL<=%@", lev];
+    sqlite3_stmt *statement;
+    NSMutableArray *res = [[NSMutableArray alloc] init];
+    if (sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            char *word = (char*)sqlite3_column_text(statement, 1);
+            NSString *wordStr = [[NSString alloc] initWithUTF8String: word];
+            [res addObject: wordStr];
+        }
+    }
+    return res;
+}
+
+#pragma mark - sql根据ID查找单词
+- (NSMutableArray *) queryByLesson: (NSString *)Id {
+    NSString *sql = [NSString stringWithFormat: @"SELECT * FROM WORD WHERE LESSON='%@'", Id];
+    sqlite3_stmt *statement;
+    NSMutableArray *res = [[NSMutableArray alloc] init];
+    if (sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            char *word = (char*)sqlite3_column_text(statement, 1);
+            NSString *wordStr = [[NSString alloc] initWithUTF8String: word];
+            [res addObject: wordStr];
+        }
+    }
+    return res;
+}
+
 #pragma mark - sql根据单词查找level
 - (NSString *) queryByWords: (NSString *) word {
     NSString *sql = [NSString stringWithFormat: @"SELECT * FROM WORD WHERE WORD='%@'", word];
@@ -72,6 +102,36 @@
         while (sqlite3_step(statement) == SQLITE_ROW) {
             char *lev = (char *)sqlite3_column_text(statement, 3);
             res = [[NSString alloc] initWithUTF8String: lev];
+        }
+    }
+    return res;
+}
+
+#pragma mark - sql查询课文TITLE，用于表单
+- (NSMutableArray *) queryTitle {
+    NSString *sql = @"SELECT * FROM PASSAGE";
+    sqlite3_stmt *statement;
+    NSMutableArray *res = [[NSMutableArray alloc] init];
+    if (sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            char *title = (char*)sqlite3_column_text(statement, 2);
+            NSString *titleStr = [[NSString alloc] initWithUTF8String: title];
+            [res addObject: titleStr];
+        }
+    }
+    return res;
+}
+
+#pragma mark - sql根据ID查询内容
+- (NSString *) queryPassageById: (NSString *)Id {
+    NSString *sql = [NSString stringWithFormat: @"SELECT * FROM PASSAGE WHERE id=%@", Id];
+    sqlite3_stmt *statement;
+    NSString *res = @"";
+    if (sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil) == SQLITE_OK) {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            char *passage = (char*)sqlite3_column_text(statement, 1);
+            NSString *passageStr = [[NSString alloc] initWithUTF8String: passage];
+            res = passageStr;
         }
     }
     return res;

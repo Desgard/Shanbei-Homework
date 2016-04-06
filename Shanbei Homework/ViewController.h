@@ -13,8 +13,11 @@
 @interface ViewController : UIViewController<UITextViewDelegate, SFDraggableDialogViewDelegate>
 
 @property (nonatomic, strong) UITextView *textView;
-@property (nonatomic, strong) NSString *passage;
 @property (nonatomic, strong) NSMutableArray *words;
+
+@property (nonatomic) NSString *lessonNum;
+@property (nonatomic, strong) NSString *passage;
+@property (nonatomic, strong) NSString *pastitle;
 
 @end
 

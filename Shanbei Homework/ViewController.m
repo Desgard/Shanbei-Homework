@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UILabel *NavBarTitle;
 @property (nonatomic, strong) UIButton *Highlight;
 @property (nonatomic, strong) UIButton *Menu;
+@property (nonatomic, strong) UISlider *slider;
 
 @property (nonatomic) bool isHighlight;
 @property (nonatomic, weak) ICSDrawerController *drawer;
@@ -41,10 +42,7 @@
 
 #pragma mark - Set NavigationBar
 - (void) setNavBar {
-    // nav样式字体颜色
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed: 88 / 255.0f green: 184 / 255.0f blue: 140 / 255.0f alpha: 1];
-    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys: [UIColor whiteColor], NSForegroundColorAttributeName, nil];
-    self.title = @"扇贝作业";
+    
     
     // 模仿navbar
     CGRect CGNavBar = CGRectMake(0, 0, self.view.frame.size.width, 64);
@@ -55,7 +53,7 @@
     self.NavBarTitle = [[UILabel alloc] initWithFrame: CGRectMake(0, 30, self.view.frame.size.width, 20)];
     self.NavBarTitle.textAlignment = NSTextAlignmentCenter;
     self.NavBarTitle.textColor = [UIColor whiteColor];
-    self.NavBarTitle.text = @"扇贝作业";
+    self.NavBarTitle.text = self.pastitle;
     
     // 左右按钮
     self.Highlight = [UIButton buttonWithType: UIButtonTypeCustom];
@@ -84,7 +82,7 @@
     // [self.db FirstLoad];
     
     // 课文数据读取
-    self.passage = @"We can read of things that happened 5,000 years ago in the Near East, where people first learned to write. But there are some parts of the word where even now people cannot write. The only way that they can preserve their history is to recount it as sagas -- legends handed down from one generation of another. These legends are useful because they can tell us something about migrations of people who lived long ago, but none could write down what they did. Anthropologists wondered where the remote ancestors of the Polynesian peoples now living in the Pacific Islands came from. The sagas of these people explain that some of them came from Indonesia about 2,000 years ago.\n\nBut the first people who were like ourselves lived so long ago that even their sagas, if they had any, are forgotten. So archaeologists have neither history nor legends to help them to find out where the first 'modern men' came from.\n\nFortunately, however, ancient men made tools of stone, especially flint, because this is easier to shape than other kinds. They may also have used wood and skins, but these have rotted away. Stone does not decay, and so the tools of long ago have remained when even the bones of the men who made them have disappeared without trace.";
+    self.passage = [self.db queryPassageById: self.lessonNum];
     
     // 单词初始化
     self.words = [NSMutableArray arrayWithObjects: @"recount", @"saga", @"legend", @"migration", @"anthropologist", @"archaeologist", @"ancestor", @"Polynesian", @"Indonesia", @"flint", @"desgard", nil];
@@ -96,6 +94,8 @@
 
 #pragma mark - Set Controller
 - (void) startUp {
+    self.navigationController.navigationBarHidden = YES;
+    self.view.backgroundColor = [UIColor colorWithRed: 240 / 255.0f green: 240 / 255.0f blue: 240 / 255.0f alpha: 1];
     // 设置文本
     NSString *text = self.passage;
     NSTextStorage *passage = [[NSTextStorage alloc] initWithString: text];
@@ -106,7 +106,7 @@
     NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize: self.view.bounds.size];
     [textLayout addTextContainer: textContainer];
     
-    self.textView = [[UITextView alloc] initWithFrame: CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64) textContainer: textContainer];
+    self.textView = [[UITextView alloc] initWithFrame: CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 104) textContainer: textContainer];
     self.textView.delegate = self;
     self.textView.dataDetectorTypes = UIDataDetectorTypeLink;
     self.textView.font = [UIFont fontWithName: @"Courier" size: 14];
@@ -114,6 +114,13 @@
     self.textView.alwaysBounceVertical = YES;
     self.textView.editable = NO;
     [self.view addSubview: self.textView];
+    
+    //
+    self.slider = [[UISlider alloc] initWithFrame: CGRectMake(0, self.view.frame.size.height - 40, self.view.frame.size.width, 40)];
+    self.slider.minimumValue = -3.0;
+    self.slider.maximumValue = 6.0;
+    [self.view addSubview: self.slider];
+    [self.slider addTarget: self action: @selector(sliderValueChanged) forControlEvents: UIControlEventValueChanged];
     
     // 设置通知
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(NotificationToHight:) name: @"HighlightLevelWords" object: nil];
@@ -152,6 +159,14 @@
     }
 }
 
+#pragma mark - func resign Hightlight
+- (void) reHightlight {
+    NSDictionary *attributeDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                     [UIFont fontWithName: @"Courier" size: 14],                                          NSFontAttributeName,
+                     nil];
+    [_textView.textStorage setAttributes: attributeDict range: NSMakeRange(0, _textView.text.length)];
+}
+
 #pragma mark - InteractWithURL Delegate
 - (bool) textView: (UITextView *)textView shouldInteractWithURL: (nonnull NSURL *)URL inRange: (NSRange)characterRange {
     // NSLog(@"%@", [self.passage substringWithRange: characterRange]);
@@ -182,16 +197,20 @@
     [dialogView createBlurBackgroundWithImage:[self jt_imageWithView:self.view] tintColor:[[UIColor blackColor] colorWithAlphaComponent:0.12] blurRadius:60];
     
     [self.view addSubview:dialogView];
-    
-    
     return YES;
 }
 
 #pragma mark - Button Action
 - (void) HighlightAction {
+    if (self.isHighlight == YES) {
+        [self reHightlight];
+        self.isHighlight = NO;
+        return;
+    }
+    
+    self.words = [self.db queryByLesson: self.lessonNum];
     [self Highlight: self.textView withWords: self.words];
-    if (self.isHighlight) self.isHighlight = NO;
-    else self.isHighlight = YES;
+    self.isHighlight = YES;
 }
 
 #pragma mark - Notification Action
@@ -203,10 +222,9 @@
      *  高亮对应级别单词。需要先清空之前样式。
      */
     if (self.isHighlight == YES) {
-        [self Highlight: self.textView withWords: [[NSMutableArray alloc] initWithObjects: self.textView.text, nil]];
+        [self reHightlight];
         self.isHighlight = NO;
     }
-    
     
     id obj = [notification object];
     self.words = [self.db queryByLevel: obj];
@@ -215,7 +233,21 @@
 }
 
 - (void) openDrawer {
-    [self.drawer open];
+    [self.navigationController popViewControllerAnimated: YES];
+}
+
+#pragma mark - Slider Action
+- (void) sliderValueChanged {
+    if (self.isHighlight == YES) {
+        [self reHightlight];
+        self.isHighlight = NO;
+    }
+    
+    int x = ceil((double)self.slider.value);
+    if (x < 0) return;
+    self.words = [self.db queryByLevelDown: [NSString stringWithFormat: @"%d", x]];
+    [self Highlight: self.textView withWords: self.words];
+    self.isHighlight = YES;
 }
 
 #pragma mark - SFDraggableDialogViewDelegate

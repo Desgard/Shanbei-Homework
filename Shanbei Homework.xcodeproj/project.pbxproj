@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D52F76651CB492E400939ED5 /* LessonFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D52F76641CB492E400939ED5 /* LessonFormViewController.m */; };
+		D538291E1CB4DEA300E8F755 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D538291D1CB4DEA300E8F755 /* menu.png */; };
+		D53829201CB4E8F200E8F755 /* main.sql in Resources */ = {isa = PBXBuildFile; fileRef = D538291F1CB4E8F200E8F755 /* main.sql */; };
 		D566C2FD1CB1090C00C54905 /* star-full.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C2FC1CB1090C00C54905 /* star-full.png */; };
-		D566C2FF1CB1091100C54905 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = D566C2FE1CB1091100C54905 /* menu.png */; };
 		D566C3011CB168B900C54905 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D566C3001CB168B900C54905 /* README.md */; };
 		D566C3031CB1FEAD00C54905 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D566C3021CB1FEAD00C54905 /* CoreData.framework */; };
 		D566C3181CB22CAD00C54905 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D566C3171CB22CAD00C54905 /* libsqlite3.tbd */; };
@@ -43,8 +45,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D52F76631CB492E400939ED5 /* LessonFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LessonFormViewController.h; sourceTree = "<group>"; };
+		D52F76641CB492E400939ED5 /* LessonFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LessonFormViewController.m; sourceTree = "<group>"; };
+		D538291D1CB4DEA300E8F755 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		D538291F1CB4E8F200E8F755 /* main.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.sql; sourceTree = "<group>"; };
 		D566C2FC1CB1090C00C54905 /* star-full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-full.png"; sourceTree = "<group>"; };
-		D566C2FE1CB1091100C54905 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		D566C3001CB168B900C54905 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D566C3021CB1FEAD00C54905 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D566C3171CB22CAD00C54905 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -175,6 +180,7 @@
 				D566C31F1CB282D900C54905 /* translate.py */,
 				D566C3201CB282D900C54905 /* nce4_words.txt */,
 				D566C3231CB2830900C54905 /* outputFilesForWords.txt */,
+				D538291F1CB4E8F200E8F755 /* main.sql */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +203,8 @@
 				D5A95BB91CAE798C009E469E /* AppDelegate.m */,
 				D5A95BBB1CAE798C009E469E /* ViewController.h */,
 				D5A95BBC1CAE798C009E469E /* ViewController.m */,
+				D52F76631CB492E400939ED5 /* LessonFormViewController.h */,
+				D52F76641CB492E400939ED5 /* LessonFormViewController.m */,
 				D5A95BBE1CAE798C009E469E /* Main.storyboard */,
 				D5A95BC11CAE798C009E469E /* Assets.xcassets */,
 				D5A95BC61CAE798C009E469E /* Info.plist */,
@@ -208,7 +216,7 @@
 		D5A95BB51CAE798C009E469E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D566C2FE1CB1091100C54905 /* menu.png */,
+				D538291D1CB4DEA300E8F755 /* menu.png */,
 				D566C2FC1CB1090C00C54905 /* star-full.png */,
 				D58DD2391CB0276400294A80 /* ICSDrawerController */,
 				D5A95BB61CAE798C009E469E /* main.m */,
@@ -300,7 +308,6 @@
 				D5A95BC21CAE798C009E469E /* Assets.xcassets in Resources */,
 				D566C3351CB2C66800C54905 /* icArrow@3x.png in Resources */,
 				D566C3341CB2C66800C54905 /* icArrow@2x.png in Resources */,
-				D566C2FF1CB1091100C54905 /* menu.png in Resources */,
 				D5A95BC01CAE798C009E469E /* Main.storyboard in Resources */,
 				D566C3381CB2C66800C54905 /* icArrowTop@3x.png in Resources */,
 				D566C2FD1CB1090C00C54905 /* star-full.png in Resources */,
@@ -308,6 +315,8 @@
 				D566C3371CB2C66800C54905 /* icArrowTop@2x.png in Resources */,
 				D566C3331CB2C66800C54905 /* icArrow.png in Resources */,
 				D566C3211CB282D900C54905 /* translate.py in Resources */,
+				D53829201CB4E8F200E8F755 /* main.sql in Resources */,
+				D538291E1CB4DEA300E8F755 /* menu.png in Resources */,
 				D566C3241CB2830900C54905 /* outputFilesForWords.txt in Resources */,
 				D566C33B1CB2C66800C54905 /* SFDraggableDialogView.xib in Resources */,
 				D566C3391CB2C66800C54905 /* icCross@2x.png in Resources */,
@@ -327,6 +336,7 @@
 				D58DD2381CB0073C00294A80 /* QFNSlayoutManager.m in Sources */,
 				D58DD2431CB0280200294A80 /* MenuViewController.m in Sources */,
 				D58DD23F1CB0276400294A80 /* ICSDropShadowView.m in Sources */,
+				D52F76651CB492E400939ED5 /* LessonFormViewController.m in Sources */,
 				D5A95BBA1CAE798C009E469E /* AppDelegate.m in Sources */,
 				D566C3011CB168B900C54905 /* README.md in Sources */,
 				D566C31B1CB22D5900C54905 /* dbhelper.m in Sources */,
